@@ -3,3 +3,4 @@
 2-bring_me_home is a Script that takes the user to home directory
 3-listfiles prints all items in a directory
 5-listfilesdigitonly list all items together with their user and group IDS
+creating my first directory
