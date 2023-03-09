@@ -10,3 +10,4 @@ Empty creates an empty file hello
 John doe adds rwx to user, rx to group and wx to others
 10 mirror applicationa script that will copy the permissions of olleh to hello
 Directories_permissions adds x permission to all uses using the reursive method
+Change group changes the group ownership of hello to school
