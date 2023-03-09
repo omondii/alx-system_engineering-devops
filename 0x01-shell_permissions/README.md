@@ -7,3 +7,4 @@ Empty creates an empty file hello
 6-multiple_permissions allow multipe permissions
 7-everybody adds script that gives permission to everyone
 8-James_Bond gives owner no permissions, group no permissions, other users all permissions
+John doe adds rwx to user, rx to group and wx to others
