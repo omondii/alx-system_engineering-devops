@@ -5,3 +5,4 @@ Who am i prints the current user
 Empty creates an empty file hello
 5-execute adds a script that add execute command to file hello
 6-multiple_permissions allow multipe permissions
+7-everybody adds script that gives permission to everyone
