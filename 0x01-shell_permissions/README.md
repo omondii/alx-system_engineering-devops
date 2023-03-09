@@ -4,3 +4,4 @@ Who am i prints the current user
 3-new_owner changes ownership of hello
 Empty creates an empty file hello
 5-execute adds a script that add execute command to file hello
+6-multiple_permissions allow multipe permissions
