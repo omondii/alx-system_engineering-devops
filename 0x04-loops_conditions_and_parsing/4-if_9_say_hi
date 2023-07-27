@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#lets print "Best School" x10 using a while loop
+#at 9 print Hi
+
+n=1
+while((n <= 9))
+do
+        echo $"Best School"
+        ((n++))
+	if ((n==9))
+	then
+	   echo $"Hi"
+	fi
+done
