@@ -3,12 +3,13 @@
 #at 9 print Hi
 
 n=1
-while((n <= 9))
+while((n <= 10))
 do
-        echo $"Best School"
-        ((n++))
 	if ((n==9))
 	then
 	   echo $"Hi"
+	else
+	   echo $"Best School"
 	fi
+	((n++))
 done
