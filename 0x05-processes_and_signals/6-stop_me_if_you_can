@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#use pkill to kill processes
+
+pkill -f beyond

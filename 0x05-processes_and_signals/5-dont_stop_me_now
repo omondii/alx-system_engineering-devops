@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#other ways to kill a process
+
+kill "$(ps -x|pgrep -f beyond)"
