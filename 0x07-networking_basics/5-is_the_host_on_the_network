@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Pings an ID address a number of times
 
 if [ -n "$1" ];
 then
