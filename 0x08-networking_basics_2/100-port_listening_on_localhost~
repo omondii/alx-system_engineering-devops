@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-
-echo "Trying 127.0.0.2..."
-echo "Connected to localhost."
-echo "Escape character is '^]'"
-nc -l 98
