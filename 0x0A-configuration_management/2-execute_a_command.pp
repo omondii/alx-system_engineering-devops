@@ -1,6 +1,6 @@
 # A manifest that executes a pkill command
-exec {'killmenow':
+exec { 'killmenow':
   command  => 'pkill killmenow',
-  onlyif   => 'pgep killmenow',
+  onlyif   => 'pgrep killmenow',
   provider => shell,
 }
