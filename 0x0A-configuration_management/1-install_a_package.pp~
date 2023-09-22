@@ -1,0 +1,6 @@
+exec { 'install flask':
+  command => 'pip3 install flask',
+  path => ['/usr/bin', '/bin'],
+  logoutput => true,
+  refreshonly =>true,
+}
