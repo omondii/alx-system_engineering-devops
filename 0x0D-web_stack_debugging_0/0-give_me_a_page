@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# Getting respose from an apache server
+# Getting response from an apache server
 
-apt-get update
-apt-get install apache2
-service apache2 start
+sudo service apache2 start
