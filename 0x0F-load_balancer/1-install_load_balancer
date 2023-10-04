@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-
 # Install and configure HAproxy on your lb-01 server.
+
 sudo apt-get -y update
 sudo apt-get install -y haproxy
 # start haproxy
 sudo service haproxy start
-#Configure HAproxy so that it send traffic to web-01 and web-02
+# Configure HAproxy so that it send traffic to web-01 and web-02
 sudo echo "global
         log /dev/log    local0
         log /dev/log    local1 notice
