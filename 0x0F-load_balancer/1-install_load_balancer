@@ -3,7 +3,8 @@
 
 sudo apt-get -y update
 sudo apt-get install -y haproxy
-
+# start haproxy
+sudo service haproxy start
 #Configure HAproxy so that it send traffic to web-01 and web-02
 sudo echo "global
         log /dev/log    local0
