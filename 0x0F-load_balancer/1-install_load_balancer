@@ -4,18 +4,37 @@
 sudo apt-get -y update
 sudo apt-get install -y haproxy
 
-#enable the load balancer to start at boot time
-sudo sed -i '8 a\ENABLED=1\n' /etc/default/haproxy
-
 #Configure HAproxy so that it send traffic to web-01 and web-02
-sudo sed -i '$ a\
-\
-frontend load_balancer\
-    bind 0.0.0.0:80\
-    mode http\
-    default_backend web_servers\
-\
-backend web_servers\
-    balance roundrobin\
-    server 309215-web-01 34.227.89.98:80 check\
-    server 309215-web-02 107.22.144.157:80 check' /etc/haproxy/haproxy.cfg
+sudo echo "global
+        log /dev/log    local0
+        log /dev/log    local1 notice
+        chroot /var/lib/haproxy
+        stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd lis\
+teners
+        stats timeout 30s
+        user haproxy
+        group haproxy
+        daemon
+
+defaults
+        log     global
+        mode    http
+        option  httplog
+        option  dontlognull
+                timeout connect 5000
+                timeout client  50000
+                timeout server  50000
+
+frontend load_balancer
+    bind *:80
+    default_backend backend_omondi
+
+backend backend_omondi
+    balance roundrobin
+    server 309215-web-01 34.227.89.98:80 check
+    server 309215-web-02 107.22.144.157:80 check
+" | sudo tee /etc/haproxy/haproxy.cfg > /dev/null
+
+# enable haproxy & restart
+sudo systemctl enable haproxy
+sudo service haproxy restart
