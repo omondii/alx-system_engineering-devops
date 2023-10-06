@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Write a Bash script that configures a server to the above requirements
 sudo kill nginx
-sudo sed -i '21s|listen 8080 default_server;|listen 80 default_server;|' /etc/nginx/sites-enabled/defaults
+sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
 sudo service nginx start
