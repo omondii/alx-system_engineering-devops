@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Write a Bash script that configures a server to the above requirements
-sed -i "/etc/nginx/sites-enabled/default" /etc/nginx/sites-enabled/default
+sed -i 's/[0-9]\+ default_server/80 default_server/' /etc/nginx/sites-enabled/default
 sudo service nginx restart
