@@ -36,7 +36,7 @@ if __name__ == "__main__":
     tasks = request('todos', ('userId', argv[1]))
     compl_tasks = [task for task in tasks if task['completed']]
 
-    print('Employees {} is done with task({}/{}):'.format(user[0]['name'],
+    print('Employees {} is done with tasks({}/{}):'.format(user[0]['name'],
                                                           len(compl_tasks),
                                                           len(tasks)))
 
