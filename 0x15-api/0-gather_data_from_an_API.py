@@ -37,8 +37,8 @@ if __name__ == "__main__":
     compl_tasks = [task for task in tasks if task['completed']]
 
     print('Employees {} is done with tasks({}/{}):'.format(user[0]['name'],
-                                                          len(compl_tasks),
-                                                          len(tasks)))
+                                                           len(compl_tasks),
+                                                           len(tasks)))
 
     for task in compl_tasks:
         print('\t {}'.format(task['title']))
