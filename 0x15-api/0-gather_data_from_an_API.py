@@ -7,9 +7,9 @@ requests
 load
 sys
 """
-import requests
 from json import load
 from sys import argv
+import requests
 
 
 if __name__ == "__main__":
