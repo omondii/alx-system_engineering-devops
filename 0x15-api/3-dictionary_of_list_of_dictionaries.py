@@ -19,26 +19,26 @@ if __name__ == '__main__':
         """
         url = 'https://jsonplaceholder.typicode.com/'
         url += resource
-        key = param[0]
-        value = param[1]
         if param:
+            key = param[0]
+            value = param[1]
             url += ('?' + key + '=' + value)
 
         r = requests.get(url)
         r = r.json()
         return r
 
-    user = request('users', ('id', argv[1]))[0]
-    tasks = request('todos', ('userId', argv[1]))
+    files = {}
+    filename = 'todo_all_employees.json'
+    users = request('users')
+    for user in users:
+        user_id = user['id']
+        files.update({user_id: []})
+        user_tasks = request('todos', ('userId', str(user_id)))
+        for task in user_tasks:
+            files[user_id].append({'username': user['username'],
+                                   'task': task['title'],
+                                   'completed': task['completed']})
 
-    # Prep for .json export
-    user_id = user['id']
-    export = {user_id: []}
-    filename = argv[1] + '.json'
-    # Export to .json format
-    for task in tasks:
-        export[user_id].append({'task': task['title'],
-                                'completed': task['completed'],
-                                'username': user['username']})
         with open(filename, mode='w') as f:
-            dump(export, f)
+            dump(files, f)

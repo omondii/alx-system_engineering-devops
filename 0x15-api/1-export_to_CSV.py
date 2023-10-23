@@ -22,8 +22,8 @@ if __name__ == '__main__':
         url += resource
         key = param[0]
         value = param[1]
-
-        url += ('?' + key + '=' + value)
+        if param:
+            url += ('?' + key + '=' + value)
 
         r = requests.get(url)
         r = r.json()
