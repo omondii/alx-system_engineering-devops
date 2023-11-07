@@ -17,11 +17,12 @@ def top_ten(subreddit):
             data = response.json()
             if 'data' in data and 'children' in data['data']:
                 # if posts: extract and print the titles of the first 10 posts
-                for post in data['data']['children'][:10]:
+                for i, post in enumerate(data['data']['children']
+                                         [:10], start=1):
                     print(post['data']['title'])
-            else:
-                print(None)
-                return 0
+        else:
+            print(None)
+            return 0
 
     except ValueError:
         return 0
