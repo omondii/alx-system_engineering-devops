@@ -16,3 +16,10 @@ exec {'limits_increase_2':
   command     => "sed -i -e '\$a\$LIMITS_ENTRY' \$DIR",
   path        => ['/usr/bin' ,'/bin'],
 }
+
+exec {'worker limits':
+  environment => ['DIR=/etc/nginx/nginx.conf', 'RLIMITS=worker_rlimit_nofile 30000;'],
+  command     => "sed -i -e '4r \$a\$RLIMITS' \$DIR",
+  path        => ['/usr/bin', '/bin']
+}
+
