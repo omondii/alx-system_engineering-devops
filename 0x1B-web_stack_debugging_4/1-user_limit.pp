@@ -1,3 +1,4 @@
+# Change the max user limit for an OS
 exec {'Os confiig for user':
   environment => ['DIR=/etc/security/limits.conf',
                   'OLD=hard nofile 5', 'NEW=hard nofile 50000',
