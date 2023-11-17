@@ -19,7 +19,7 @@ exec {'limits_increase_2':
 
 exec {'worker limits':
   environment => ['DIR=/etc/nginx/nginx.conf', 'RLIMITS=worker_rlimit_nofile 30000;'],
-  command     => "sed -i -e '4r \$a\$RLIMITS' \$DIR",
+  command     => "sed -i -e '4r \$a\$RLIMITS' \$DIR sudo service nginx restart",
   path        => ['/usr/bin', '/bin']
 }
 
